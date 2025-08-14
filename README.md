@@ -4,7 +4,7 @@ The **Mobilint NPU LLM Inference Demo Container** provides a fully integrated, r
 
 ## Overview
 
-![Mobilint, Inc. LLM Demo](mobilint_llm_demo.git)
+![Mobilint, Inc. LLM Demo](demo.gif)
 
 This edge LLM demo container features a user-friendly web-based GUI that allows users to select from a list of pre-compiled LLMs without any command-line configuration. It is designed for quick evaluation and demonstration of ARIES’s NPU acceleration in real-world LLM workloads.
 
@@ -115,5 +115,3 @@ Preloaded and validated on Advantech systems, Mobilint’s NPU enables immediate
 Copyright © 2025 Mobilint, Inc. All rights reserved.
 
 Provided “as is” without warranties.
-
----
