@@ -26,22 +26,21 @@ The container is designed to demonstrate Mobilint NPU’s local LLM capabilities
 
 ### Software
 
-- Docker Engine ≥ 28.2.2
-- Mobilint SDK modules
-    - Pre-compiled Mobilint-compatible LLM binaries (.mxq)
-    - Mobilint ARIES NPU Driver
-        - NOTE: To access the files and modules, please contact tech-support[@mobilint.com](mailto:~~~@mobilint.com).
-        
-        1. To verify device recognition, run the following command in the terminal:
-        `ls /dev | grep aries0`
-        If the output includes aries0, the device is recognized by the system.
-        2. For Debian-based operating systems, verify driver installation by running:
-        `dpkg -l | grep aries-driver`
-        If the output contains information about aries-driver, the device driver is installed.
-        
-    
-
----
+- **Docker Engine ≥ 28.2.2**
+- **Mobilint SDK modules**
+    - **Pre-compiled Mobilint-compatible LLM binaries (.mxq)**
+    - **Mobilint ARIES NPU Driver**
+      
+        1. To verify device recognition, run the following command in the terminal. If the output includes aries0, the device is recognized by the system.
+        ```
+        ls /dev | grep aries0
+        ```
+      
+        2. For Debian-based operating systems, verify driver installation by running the following command. If the output contains information about aries-driver, the device driver is installed.
+        ```
+        dpkg -l | grep aries-driver
+        ```
+> NOTE: To access the files and modules, please contact [tech-support@mobilint.com](mailto:tech-support@mobilint.com).    
 
 ## Container Information
 
@@ -53,48 +52,48 @@ WIP
 
 ### Container Components
 
-- Mobilint Runtime Library (latest stable release)
-- Web-based GUI frontend (Next.js based)
-
----
+- **Mobilint Runtime Library (latest stable release)**
+- **Web-based GUI frontend (Next.js based)**
 
 ## Quick Start Guide
 
-### Install Docker
+### 1. Install Docker
 
-Follow the [official instruction](https://docs.docker.com/engine/install/ubuntu/)
-Also, set your user as `docker` group by following the [Linux post-installation steps](https://docs.docker.com/engine/install/linux-postinstall/)
+To install Docker, follow the [official instruction](https://docs.docker.com/engine/install/ubuntu/).
 
-You must install `nvidia-container-toolkit` by following [this guide](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html).
+Also, set your user as `docker` group by referring to the [Linux post-installation steps](https://docs.docker.com/engine/install/linux-postinstall/).
 
-### Create Docker Network & Build Image
+Ensure that you have installed the NVIDIA Container Toolkit (`nvidia-container-toolkit`) by following [this guide](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html).
+
+### 2. Create Docker Network & Build Image
 
 ```shell
 mobilint@mobilint# docker network create mblt_int
 mobilint@mobilint# docker compose build
 ```
 
-### Run
+### 3. Run
 
 ```shell
 mobilint@mobilint# docker compose up
 ```
 
-### Run on background
+### 4. Run on background
 
 ```shell
 mobilint@mobilint# docker compose up -d
 ```
 
-### Shutdown background
+### 5. Shutdown background
 
 ```shell
 mobilint@mobilint# docker compose down
 ```
 
-1. **From the GUI, select a model from the list.**
-2. **Interact with the loaded LLM as needed.**
-3. **To troubleshoot unexpected errors, please contact tech-support@mobilint.com.**
+## Using the Demo
+### 1. From the GUI, select a model from the list.
+### 2. Interact with the loaded LLM as needed.
+### 3. To troubleshoot unexpected errors, please contact [tech-support@mobilint.com](mailto:tech-support@mobilint.com).
 
 ---
 
@@ -107,11 +106,3 @@ Advantech’s industrial edge hardware, integrating Mobilint’s NPU AI accelera
 Preloaded and validated on Advantech systems, Mobilint’s NPU enables immediate deployment of optimized AI applications across industries - including manufacturing, smart infrastructure, robotics, healthcare, and autonomous systems.
 
 ![Partnership](partnership.jpg)
-
----
-
-## License
-
-Copyright © 2025 Mobilint, Inc. All rights reserved.
-
-Provided “as is” without warranties.
