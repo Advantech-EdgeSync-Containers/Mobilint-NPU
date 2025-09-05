@@ -1,0 +1,8 @@
+LGAI-EXAONE/EXAONE-3.5-2.4B-Instruct
+LGAI-EXAONE/EXAONE-4.0-1.2B
+LGAI-EXAONE/EXAONE-Deep-2.4B
+naver-hyperclovax/HyperCLOVAX-SEED-Text-Instruct-1.5B
+meta-llama/Llama-3.2-1B-Instruct
+meta-llama/Llama-3.2-3B-Instruct
+meta-llama/Llama-3.1-8B-Instruct
+CohereLabs/c4ai-command-r7b-12-2024

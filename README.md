@@ -55,6 +55,7 @@ WIP
 
 - Mobilint Runtime Library (latest stable release)
 - Web-based GUI frontend (Next.js based)
+- Python LLM server backend (socket.io based)
 
 ---
 
@@ -65,31 +66,44 @@ WIP
 Follow the [official instruction](https://docs.docker.com/engine/install/ubuntu/)
 Also, set your user as `docker` group by following the [Linux post-installation steps](https://docs.docker.com/engine/install/linux-postinstall/)
 
-You must install `nvidia-container-toolkit` by following [this guide](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html).
-
 ### Create Docker Network & Build Image
 
 ```shell
-mobilint@mobilint# docker network create mblt_int
-mobilint@mobilint# docker compose build
+docker network create mblt_int
+docker compose build
 ```
 
 ### Run
 
 ```shell
-mobilint@mobilint# docker compose up
+docker compose up
 ```
+
+### Set Production Mode
+
+This demo was originally implemented for demonstration purpose only, which made it only usable with one user.
+However, you can set this demo available for multi-users by setting production environment variable.
+Just copy `backend/src/.env.example` to `backend/src/.env` and make `PRODUCTION="True"`.
+If production mode, changing model does not affect immediately. The server will automatically change model for each LLM request when needed.
+
+### Change list of models
+
+You can change list of LLM models by editing `backend/src/models.txt`. These change will be applied when server is restarted.
+
+### Change text prompts
+
+You can change system prompts without any docker rebuild by editing `backend/src/system.txt` and `backend/src/inter-prompt.txt`. These files will be applied when conversation is reset.
 
 ### Run on background
 
 ```shell
-mobilint@mobilint# docker compose up -d
+docker compose up -d
 ```
 
 ### Shutdown background
 
 ```shell
-mobilint@mobilint# docker compose down
+docker compose down
 ```
 
 1. **From the GUI, select a model from the list.**

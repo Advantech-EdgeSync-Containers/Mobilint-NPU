@@ -1,0 +1,46 @@
+# You can add server-side setting whatever you want according to the
+# proper operation server side environment.
+#
+networks:
+  mblt_int:
+    external: true
+
+services:
+  aries_llm_frontend:
+    build:
+      context: ./frontend
+      dockerfile: frontend.Dockerfile
+
+    hostname: aries-llm-frontend
+
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+      - /app/.next
+
+    ports:
+      - 3000:3000
+
+    networks:
+      - mblt_int
+
+  aries_llm_backend:
+    build:
+      context: ./backend
+      dockerfile: backend.Dockerfile
+
+    hostname: aries-llm-backend
+
+    privileged: true
+
+    volumes:
+      - ./backend/src:/src
+      - ${HOME}/.mblt_model_zoo:/root/.mblt_model_zoo
+      - ${HOME}/.cache/huggingface:/root/.cache/huggingface
+      - /dev:/dev
+
+    ports:
+      - 5000:5000
+
+    networks:
+      - mblt_int
