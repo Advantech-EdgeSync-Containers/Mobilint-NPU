@@ -48,7 +48,13 @@ The container is designed to demonstrate Mobilint NPU’s local LLM capabilities
 ### Directory Structure
 
 ```
-WIP
+├── backend
+│   └── src
+└── frontend
+    ├── app
+    │   └── components
+    └── public
+        └── fonts
 ```
 
 ### Container Components
