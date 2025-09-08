@@ -30,7 +30,7 @@ The container is designed to demonstrate Mobilint NPU’s local LLM capabilities
 - Mobilint SDK modules
     - Pre-compiled Mobilint-compatible LLM binaries (.mxq)
     - Mobilint ARIES NPU Driver
-        - NOTE: To access the files and modules, please contact tech-support[@mobilint.com](mailto:~~~@mobilint.com).
+        - NOTE: To access the files and modules, please contact [tech-support@mobilint.com](mailto:tech-support@mobilint.com).
         
         1. To verify device recognition, run the following command in the terminal:
         `ls /dev | grep aries0`
@@ -39,7 +39,6 @@ The container is designed to demonstrate Mobilint NPU’s local LLM capabilities
         `dpkg -l | grep aries-driver`
         If the output contains information about aries-driver, the device driver is installed.
         
-    
 
 ---
 
@@ -69,8 +68,8 @@ The container is designed to demonstrate Mobilint NPU’s local LLM capabilities
 
 ### Install Docker
 
-Follow the [official instruction](https://docs.docker.com/engine/install/ubuntu/)
-Also, set your user as `docker` group by following the [Linux post-installation steps](https://docs.docker.com/engine/install/linux-postinstall/)
+Follow the [official Docker installation guide](https://docs.docker.com/engine/install/ubuntu/).
+After installation, add your user to the `docker` group by following the [Linux post-installation steps](https://docs.docker.com/engine/install/linux-postinstall/).
 
 ### Create Docker Network & Build Image
 
@@ -87,18 +86,18 @@ docker compose up
 
 ### Set Production Mode
 
-This demo was originally implemented for demonstration purpose only, which made it only usable with one user.
-However, you can set this demo available for multi-users by setting production environment variable.
-Just copy `backend/src/.env.example` to `backend/src/.env` and make `PRODUCTION="True"`.
-If production mode, changing model does not affect immediately. The server will automatically change model for each LLM request when needed.
+This demo was originally designed for single-user demonstration purposes.
+However, you can enable multi-user functionality by setting up the production environment variable.
+To do this, copy `backend/src/.env.example` to `backend/src/.env` and make `PRODUCTION="True"`.
+In production mode, changing the model will not be applied immediately. Instead, the server will automatically load the requested model for each LLM request as needed.
 
 ### Change list of models
 
-You can change list of LLM models by editing `backend/src/models.txt`. These change will be applied when server is restarted.
+You can change the list of LLMs by editing `backend/src/models.txt`. These change will be applied when server is restarted.
 
 ### Change text prompts
 
-You can change system prompts without any docker rebuild by editing `backend/src/system.txt` and `backend/src/inter-prompt.txt`. These files will be applied when conversation is reset.
+You can change system prompts without any docker rebuild by editing `backend/src/system.txt` and `backend/src/inter-prompt.txt`. The changes will be applied when the conversation is reset.
 
 ### Run on background
 
@@ -114,7 +113,7 @@ docker compose down
 
 1. **From the GUI, select a model from the list.**
 2. **Interact with the loaded LLM as needed.**
-3. **To troubleshoot unexpected errors, please contact tech-support@mobilint.com.**
+3. **To troubleshoot unexpected errors, please contact [tech-support@mobilint.com](mailto:tech-support@mobilint.com).**
 
 ---
 
