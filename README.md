@@ -10,11 +10,31 @@ This edge LLM demo container features a user-friendly web-based GUI that allows 
 
 All required runtime components and model binaries are preloaded to ensure a smooth out-of-the-box experience. Users can test different models and parameters from the GUI without editing configuration files or entering commands.
 
+---
+
 ## Key Features
 
 - **Browser-based GUI** – Model selection and inference execution from a single dashboard
 - **Pre-compiled model set** – Includes INT8-quantized LLMs
 - **Optimized Runtime Library** – Hardware-accelerated inference for ARIES NPUs and Python and C++ backend integration for extended development
+
+## Mobilint NPU – LLM Performance Report
+
+All LLM metrics are measured using GenAI-Perf by NVIDIA.
+The number of input tokens and output tokens were 240 and 10 respectively.
+
+| Model | Time To First Token (ms) | Output Token Throughput Per User (tokens/sec/user) |
+|-------|-------------------------:|---------------------------------------------------:|
+| c4ai-command-r7b-12-2024            | 4,667.31 | 4.58  |
+| EXAONE-3.5-2.4B-Instruct            | 963.86   | 14.23 |
+| EXAONE-4.0-1.2B                     | 329.37   | 31.62 |
+| EXAONE-Deep-2.4B                    | 886.35   | 13.03 |
+| HyperCLOVAX-SEED-Text-Instruct-1.5B | 435.50   | 22.46 |
+| Llama-3.1-8B-Instruct               | 4,430.71 | 5.81  |
+| Llama-3.2-1B-Instruct               | 430.56   | 30.73 |
+| Llama-3.2-3B-Instruct               | 1218.22  | 12.16 |
+
+---
 
 ## Environmental Prerequisites on Host OS
 
